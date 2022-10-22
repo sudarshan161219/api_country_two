@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, {useRef, useMemo, useEffect, useState } from 'react'
 import Loading from './Loading';
 import Header from './Header';
 import Main from './Main';
-import Filter from './Filter';
+// import Filter from './Filter';
 import Cards from './Cards'
 import './App.css';
 
@@ -15,10 +15,7 @@ function App() {
 const [loading, setLoading] = useState(true)
 const [api, setApi] = useState([])
 const [input, setInput] = useState('')
-const [output, setOutput] = useState([])
-const [filterParam, setFilterParam] = useState('')
-
-
+const inputRef = useRef()
 
 const fetchInfo = async () => { 
 try{
@@ -36,50 +33,38 @@ useEffect (() =>{
 }, [])
 
 
- useEffect(() =>{
-setOutput([])
-// eslint-disable-next-line array-callback-return
-api.filter( (val) =>{
-  if(val.name.official.toLowerCase().includes(input.toLowerCase()) ||
-   val.name.common.toLowerCase().includes(input.toLowerCase())){
-    setOutput(output =>[...output, val])
-  }
+//  useEffect(() =>{
+// setOutput([])
+// // eslint-disable-next-line array-callback-return
+// api.filter( (val) =>{
+//   if(val.name.official.toLowerCase().includes(input.toLowerCase()) ||
+//    val.name.common.toLowerCase().includes(input.toLowerCase())){
+//     setOutput(output =>[...output, val])
+//   }
 
-  if(filterParam === val.region){
-    setOutput(output =>[...output, val])
-  }
-
-
-})
-}, [api, input, filterParam])
+//   // if(filterParam === val.region){
+//   //   setOutput(output =>[...output, val])
+//   // }
 
 
-
-const country = (searchValue) => {
-  setInput(searchValue);
-  setFilterParam(searchValue)
-  if (input) {
-    setOutput(
-      api.filter((country) =>
-        Object.values(country)
-          .join("")
-          .toLowerCase()
-          .includes(searchValue.toLowerCase())
-      )
-    )};
-
-      if (filterParam === api.region) {
-        setOutput(
-          api.filter((country) =>
-            Object.values(country.region)
-              .join("")
-              .toLowerCase()
-              .includes(searchValue.toLowerCase())
-          )
-        )};
+// })
+// }, [api, input])
 
 
-    }
+// const filteredItems =  useMemo(() => {
+//   return  api.filter(item =>{
+//      return item.name.official.toLowerCase().includes(input.toLowerCase())
+//       })
+  
+//   })
+
+
+  const filteredItems = api.filter(item =>{
+     return item.name.official.toLowerCase().includes(input.toLowerCase())
+        })
+  
+    
+
 
 
 if(loading){
@@ -90,7 +75,7 @@ if(loading){
   )
 }
 
-
+// const setIn
 
   return(
     <>
@@ -98,17 +83,19 @@ if(loading){
 <section className='section' >
 
      <Main 
-     country={country}
+     country={setInput}
+     inputR={inputRef}
      input={input}
      />
 
-     <Filter 
-     filteredCountry={country}
-      filterParam={filterParam} 
-      />
+     {/* <Filter 
+      country={setInput}
+      inputR={inputRef}
+      input={input}
+      /> */}
 
 
-     <Cards Api={output} />
+     <Cards Api={filteredItems} />
      
 </section>
     </>

@@ -20,9 +20,12 @@ const Filter = (props) => {
         <Select
           labelId="demo-simple-select-autowidth-label"
           id="demo-simple-select-autowidth"
-          value={props.filterParam}
-          onChange={(e) => props.filteredCountry(e.target.value)}
-          autoWidth
+          // value={props.filterParam}
+          // onChange={(e) => props.filteredCountry(e.target.value)}
+          value={props.input}
+          // ref={props.inputR}
+          onChange={(e) => props.country(e.target.value)}
+          // autoWidth
           label="Age"
         >
 

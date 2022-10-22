@@ -6,6 +6,12 @@ const Main = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+const value = props.input.current.value
+if(value === "")return
+props.country(prev => {
+  return[...prev, value]
+})
+props.input.current.value =""
     }
 
     return (
@@ -20,6 +26,7 @@ const Main = (props) => {
         type='search' 
         className='input'
         value={props.input}
+        ref={props.inputR}
         onChange={(e) => props.country(e.target.value)}
         />
 
