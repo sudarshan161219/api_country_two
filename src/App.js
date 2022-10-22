@@ -51,17 +51,18 @@ useEffect (() =>{
 // }, [api, input])
 
 
-// const filteredItems =  useMemo(() => {
-//   return  api.filter(item =>{
-//      return item.name.official.toLowerCase().includes(input.toLowerCase())
-//       })
-  
-//   })
-
-
-  const filteredItems = api.filter(item =>{
+// eslint-disable-next-line react-hooks/exhaustive-deps
+const filteredItems =  useMemo(() => {
+  return  api.filter(item =>{
      return item.name.official.toLowerCase().includes(input.toLowerCase())
-        })
+      })
+  
+  })
+
+
+  // const filteredItems = api.filter(item =>{
+  //    return item.name.official.toLowerCase().includes(input.toLowerCase())
+  //       })
   
     
 
