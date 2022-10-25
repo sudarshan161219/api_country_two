@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card'
-import Info from './Info'
-import { Link } from 'react-router-dom';
+// import Info from './Info'
+// import { Link } from 'react-router-dom';
 
 const Cards = ({Api}) => {
 

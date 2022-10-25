@@ -1,5 +1,5 @@
 import React, {useRef, useMemo, useEffect, useState } from 'react'
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Loading from './Loading';
 import Header from './Header';
 import Main from './Main';
@@ -63,20 +63,29 @@ if(loading){
 
   return(
     <>
-  
+        <Header />
 <Routes>
   <Route path='/' element={
        <>
-       <Header />
+ 
        <section className='section'>
+
+<div className='flex' >
             <Main
+            className='flex-form'
               country={setInput}
               inputR={inputRef}
-              input={input} />
+              input={input} 
+              />
 
             <Filter
+            className='flex-select'
               change={change}
-              setChange={setChange} />
+              setChange={setChange} 
+              />
+
+</div>
+
               
      <Cards Api={filteredItems} />     
           </section>

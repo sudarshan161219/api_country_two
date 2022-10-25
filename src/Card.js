@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const Card = ({index, name, flags, region, population, capital  }) => {
 
 var num = population;
@@ -8,7 +8,7 @@ var commas = num.toLocaleString("en-US");
   return (
   <>
 
-<Link to={`/info/${name.official}`} >   <article className="cards">
+<Link to={`/info/${name.official}`} style={{ textDecoration: 'none' }}>   <article className="cards">
         <div className='card-container' >
 
          <div className='img-container'>

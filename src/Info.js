@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Info = () => {
 
@@ -7,28 +7,45 @@ const [info, setInfo] = useState([])
 
 let { id } = useParams();
 
+      useEffect (() =>{
 const fetchInfo = async () => { 
-const response = await fetch(`https://restcountries.com/v3.1/name/${id}`)
-  
+      try{
+      const response = await fetch(`https://restcountries.com/v3.1/name/${id}`)
       const info = await response.json()
       setInfo(info)
-
+      } catch(error){
+    console.log('error')
+      }
     }
 
-      useEffect (() =>{
     fetchInfo()
-    }, [])
+    }, [id])
 
 console.log(info)
 
   return (
   <>
-    <article>
+
+
+
+    <article className='info-box' >
 {info.map((item, index) => {
   return(
     <>  
+    <div  key={item}>
+  <div className='btn-img'>
+    <div>
+        <Link to={'/'} style={{ textDecoration: 'none' }} > <button> back </button></Link>
+    </div>
+
   <img alt={item.name.official} src={item.flags.png}  />
+      </div>
+
+
+
+
   <h1>{item.name.official}</h1>
+    </div>
     </>
   )
 
