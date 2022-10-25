@@ -252,10 +252,11 @@ outline: none;
 
 .cards{
 	display: grid;
-
+	width: 299px;
 }
 
 .cards-section{
+	justify-items: center;
 	margin: 0 2rem;
 	display: grid;
 	gap: 1.5rem;

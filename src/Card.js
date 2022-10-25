@@ -1,12 +1,14 @@
 import React from 'react'
-const Card = ({ name, flags, region, population, capital  }) => {
+import { Link, useParams } from 'react-router-dom';
+const Card = ({index, name, flags, region, population, capital  }) => {
 
 var num = population;
 var commas = num.toLocaleString("en-US");
 
   return (
   <>
-    <article className="cards">
+
+<Link to={`/info/${name.official}`} >   <article className="cards">
         <div className='card-container' >
 
          <div className='img-container'>
@@ -26,7 +28,9 @@ var commas = num.toLocaleString("en-US");
 
 
 
-    </article>
+    </article></Link>
+
+
     </>
   );
 };

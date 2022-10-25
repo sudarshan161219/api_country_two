@@ -1,9 +1,11 @@
 import React, {useRef, useMemo, useEffect, useState } from 'react'
+import { Link, Route, Routes } from 'react-router-dom';
 import Loading from './Loading';
 import Header from './Header';
 import Main from './Main';
 import Filter from './Filter';
 import Cards from './Cards'
+import Info from './Info'
 import './App.css';
 
 
@@ -61,27 +63,28 @@ if(loading){
 
   return(
     <>
-    <Header />
-<section className='section' >
+  
+<Routes>
+  <Route path='/' element={
+       <>
+       <Header />
+       <section className='section'>
+            <Main
+              country={setInput}
+              inputR={inputRef}
+              input={input} />
 
-     <Main 
-     country={setInput}
-     inputR={inputRef}
-     input={input}
-     />
+            <Filter
+              change={change}
+              setChange={setChange} />
+              
+     <Cards Api={filteredItems} />     
+          </section>
+          </>
+  } />  
 
-     <Filter 
-     change={change}
-     setChange={setChange}
-      />
-
-
-     <Cards 
-     Api={filteredItems}
-
-      />
-     
-</section>
+<Route path='/info/:id' element={<Info/>}  />
+</Routes>
     </>
   )
 
