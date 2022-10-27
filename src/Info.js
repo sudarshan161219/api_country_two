@@ -29,6 +29,8 @@ const fetchInfo = async () => {
     };
 
 
+
+
   return (
   <>
 
@@ -61,7 +63,7 @@ const fetchInfo = async () => {
       </li>
 
       <li className='country-info-list-items'>
-        Population: <span>{item.population}</span>
+        Population: <span>{item.population.toLocaleString("en-US")}</span>
       </li>
 
       <li className='country-info-list-items'>
@@ -89,10 +91,29 @@ const fetchInfo = async () => {
       </li>
 
       <li className='country-info-list-items'>
-        Languages: <span>{item.region}</span> 
+        Languages: <span>{Object.values(item.languages).toLocaleString('en-US').replaceAll(',', ', ') 
+        }</span> 
       </li>
 
     </ul>
+
+<div className='info-tag'>
+  <p>Border Countries:</p>
+
+  <div className='tags'>{
+    
+          item.borders ? item.borders.map((item, index) => (
+          <div className="badge" key={index}>
+            {item}
+            </div>
+
+  )) : '😎'
+    
+    }</div>
+
+
+</div>
+
 </div>
 
 
