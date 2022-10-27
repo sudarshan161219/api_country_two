@@ -40,23 +40,24 @@ const fetchInfo = async () => {
 {info.map((item, index) => {
   return(
     // <>  
-    <div  key={item}>
+    <div  className='info-box-flex'  key={item}>
 
+<div className='btn--img-container' >
 <div className='btn-container' >
 <Link to={'/'} style={{ textDecoration: 'none', width:'200px' }} > 
 <button className='info-btn'> <BsArrowLeft className='btn-arrow' /> back </button>
 </Link>
 </div>
 
-<div className='img-container'>
+<div className='ino-img-container'>
 <img className="info-img" alt={item.name.official} src={item.flags.png}  />
 </div>
-
-
+</div>
 
 <div className='country-info-box'>
-    <h1 className='country-info-heading'>{item.name.official}</h1>
+<div className='country-info-box-desktop' >
     <ul className='country-info-list'>
+    <h1 className='country-info-heading'>{item.name.official}</h1>
 
       <li className='country-info-list-items'>
         Native Name: <span>{Object.values(item.name.nativeName)[0]?.common}</span>
@@ -96,6 +97,8 @@ const fetchInfo = async () => {
       </li>
 
     </ul>
+
+    </div>
 
 <div className='info-tag'>
   <p>Border Countries:</p>

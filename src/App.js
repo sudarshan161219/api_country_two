@@ -17,35 +17,38 @@ const [input, setInput] = useState('')
 const [change, setChange] = useState('')
 const inputRef = useRef()
 
+
 // eslint-disable-next-line react-hooks/exhaustive-deps
-
-
 const fetchInfo = async () => { 
-try{
 
-  const response = await fetch("https://restcountries.com/v3.1/all")
+  try{
+  const response = await fetch("https://restcountries.com/v3.1/all" )
   const info = await response.json()
-  setLoading(false)
   setApi(info)
+  setLoading(false)
 } catch(error){
   setLoading(false)
 }
 
 }
 
- 
 useEffect (() =>{
 fetchInfo()
 }, [])
+
+
 
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
 const filteredItems =  useMemo(() => {
   return  api.filter(item =>{
       return(
-         item.region.toLowerCase().includes(change.toLowerCase())  && 
+        item.region.toLowerCase().includes(change.toLowerCase())  && 
          item.name.official.toLowerCase().includes(input.toLowerCase())
+
       )
+
+      // eslint-disable-next-line no-unreachable
       })
   })
 
@@ -59,7 +62,7 @@ if(loading){
   )
 }
 
-
+// console.log(api)
 
   return(
     <>
@@ -72,14 +75,14 @@ if(loading){
 
 <div className='flex' >
             <Main
-            className='flex-form'
+              className='flex-form'
               country={setInput}
               inputR={inputRef}
               input={input} 
               />
 
             <Filter
-            className='flex-select'
+              className='flex-select'
               change={change}
               setChange={setChange} 
               />
@@ -88,6 +91,7 @@ if(loading){
 
               
      <Cards Api={filteredItems} />     
+  
           </section>
           </>
   } />  
