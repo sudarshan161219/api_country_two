@@ -14,7 +14,7 @@ const Header = (props) => {
       <div onClick={props.toggle} className='dark-light'>
      {props.theme === 'dark' ? <HiOutlineSun  className='icon' /> : <HiOutlineMoon  className='icon' /> }   
       <p>{props.theme === 'dark' ? 'Light Mode': 'Dark Mode'}</p>  
-      {/* <p>{hello}</p>   */}
+
       </div>
 
       </div>

@@ -517,7 +517,7 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 .info-box-flex {
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
     display: flex;
 }
 
