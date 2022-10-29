@@ -98,9 +98,8 @@ body {
 	transition: all 0.5s ease;
 }
 
-#dark::-webkit-scrollbar {
+#dark ::-webkit-scrollbar {
 	background-color:var(--color-VeryDark-BlueDarkMode-Background);
-	transition: all 0.5s ease;
 }
 
 #dark .select .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon{
