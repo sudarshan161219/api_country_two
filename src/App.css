@@ -56,6 +56,7 @@ table {
   }
 
   ::-webkit-scrollbar {
+	background-color:var(--color-VeryDark-BlueDarkMode-Background);
 	width: 10px;
   }
   
@@ -86,14 +87,80 @@ table {
   }
 
 
-body {
+body #light{
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	font-family: 'Nunito Sans', sans-serif;
 	line-height: 1;
+	background-color: var(--color-Very-LightGray-LightMode-Background);
+	transition: all 0.3s;
 }
 
+#dark::-webkit-scrollbar {
+	background-color:var(--color-VeryDark-BlueDarkMode-Background);
+	transition: all 0.3s;
+}
+
+#dark{
+	background-color:var(--color-VeryDark-BlueDarkMode-Background);
+	color: var(--color-White-DarkMode-Text_LightMode-Elements);
+	transition: all 0.3s;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	font-family: 'Nunito Sans', sans-serif;
+	line-height: 1;
+	transition: all 0.3s;
+}
+
+#dark  h1{
+	transition: all 0.3s;
+	color: var(--color-White-DarkMode-Text_LightMode-Elements);
+}
+
+#dark  h2{
+	transition: all 0.3s;
+	color: var(--color-White-DarkMode-Text_LightMode-Elements);
+}
+
+
+#dark  h3{
+	transition: all 0.3s;
+	color: var(--color-White-DarkMode-Text_LightMode-Elements);
+}
+
+#dark span{
+	transition: all 0.3s;
+	color: var(--color-White-DarkMode-Text_LightMode-Elements);
+}
+
+#dark .btn{
+	transition: all 0.3s;
+	color: var(--color-White-DarkMode-Text_LightMode-Elements);
+	background-color:var(--color-DarkBlue-DarkModeElements);
+}
+
+#dark .input{
+	transition: all 0.3s;
+	color: var(--color-White-DarkMode-Text_LightMode-Elements);
+	background-color:var(--color-DarkBlue-DarkModeElements);
+}
+
+#dark .input::placeholder{
+	transition: all 0.3s;
+	color: snow;
+}
+
+#dark .select, .css-6hp17o-MuiList-root-MuiMenu-list{
+	transition: all 0.3s;
+	color: snow;
+	background-color:var(--color-DarkBlue-DarkModeElements);
+}
+
+#dark .label{
+	color: snow;
+}
 
 
 h1{
@@ -213,7 +280,8 @@ p{
 	padding: 0  1.5rem;
     width: 50px;
     border: none;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
+	background-color: transparent;
 }
 
 .input, .btn {
@@ -424,6 +492,12 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	grid-template-columns: repeat(auto-fit, minMax(min(80%, 80px), 3fr) );
 	display: grid;
 }
+/* 
+#light{
+	background-color: #fb5b53;
+} */
+
+
 
 
 @media (min-width:1024px) {

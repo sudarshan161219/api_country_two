@@ -14,6 +14,7 @@ import './App.css';
 const Filter = (props) => {
 
 const style = {
+  backgroundColor:props.toggle,
   fontSize:'0.8rem',
   width:'185px',
   height:'45px',
@@ -38,7 +39,7 @@ const labelStyle = {
       
       <FormControl className='css-1e7cuzv-MuiFormControl-root' >
 
-        <InputLabel style={labelStyle}  id="demo-simple-select-autowidth-label">Filter by Region</InputLabel>
+        <InputLabel className='label' style={labelStyle}  id="demo-simple-select-autowidth-label">Filter by Region</InputLabel>
 
         <Select
           labelId="demo-simple-select-autowidth-label"
@@ -47,6 +48,7 @@ const labelStyle = {
           onChange={(e) => props.setChange(e.target.value)}
           label="Filter by Region"
           style={style}
+          className='select'
         >
 
 

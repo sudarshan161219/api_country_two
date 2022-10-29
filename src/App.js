@@ -1,4 +1,4 @@
-import React, {useRef, useMemo, useEffect, useState } from 'react'
+import React, {createContext,useRef, useMemo, useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom';
 import Loading from './Loading';
 import Header from './Header';
@@ -8,6 +8,7 @@ import Cards from './Cards'
 import Info from './Info'
 import './App.css';
 
+export const  ThemeContext = createContext(null)
 
 function App() {
 
@@ -16,7 +17,7 @@ const [api, setApi] = useState([])
 const [input, setInput] = useState('')
 const [change, setChange] = useState('')
 const inputRef = useRef()
-
+const [theme, setTheme] = useState('light')
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
 const fetchInfo = async () => { 
@@ -45,14 +46,9 @@ const filteredItems =  useMemo(() => {
       return(
         item.region.toLowerCase().includes(change.toLowerCase())  && 
          item.name.official.toLowerCase().includes(input.toLowerCase())
-
       )
-
-      // eslint-disable-next-line no-unreachable
       })
   })
-
-
 
 if(loading){
   return(
@@ -62,11 +58,18 @@ if(loading){
   )
 }
 
-// console.log(api)
+
+const toggleTheme = () => {
+setTheme((theme === 'light' ? 'dark' : 'light'))
+}
+
 
   return(
-    <>
-        <Header />
+
+    <ThemeContext.Provider value={{theme, toggleTheme}} >
+
+    <div id={theme}>
+        <Header toggle={toggleTheme} theme={theme} />
 <Routes>
   <Route path='/' element={
        <>
@@ -98,7 +101,10 @@ if(loading){
 
 <Route path='/info/:id' element={<Info/>}  />
 </Routes>
-    </>
+    </div>
+
+    </ThemeContext.Provider>
+
   )
 
 }
