@@ -17,7 +17,7 @@ const [api, setApi] = useState([])
 const [input, setInput] = useState('')
 const [change, setChange] = useState('')
 const inputRef = useRef()
-const [theme, setTheme] = useState('light')
+const [theme, setTheme] = useState('dark')
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
 const fetchInfo = async () => { 

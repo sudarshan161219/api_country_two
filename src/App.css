@@ -85,75 +85,66 @@ table {
 	--color-Very-LightGray-LightMode-Background: hsl(0, 0%, 98%);                       
 	--color-White-DarkMode-Text_LightMode-Elements: hsl(0, 0%, 100%);
   }
-
-
-body #light{
+body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	font-family: 'Nunito Sans', sans-serif;
 	line-height: 1;
+}
+
+#light{
 	background-color: var(--color-Very-LightGray-LightMode-Background);
-	transition: all 0.3s;
+	transition: all 0.5s ease;
 }
 
 #dark::-webkit-scrollbar {
 	background-color:var(--color-VeryDark-BlueDarkMode-Background);
-	transition: all 0.3s;
+	transition: all 0.5s ease;
+}
+
+#dark .select .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon{
+	color: snow;
 }
 
 #dark{
 	background-color:var(--color-VeryDark-BlueDarkMode-Background);
 	color: var(--color-White-DarkMode-Text_LightMode-Elements);
-	transition: all 0.3s;
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	font-family: 'Nunito Sans', sans-serif;
-	line-height: 1;
-	transition: all 0.3s;
+	transition: all 0.5s ease;
 }
 
 #dark  h1{
-	transition: all 0.3s;
 	color: var(--color-White-DarkMode-Text_LightMode-Elements);
 }
 
 #dark  h2{
-	transition: all 0.3s;
 	color: var(--color-White-DarkMode-Text_LightMode-Elements);
 }
 
 
 #dark  h3{
-	transition: all 0.3s;
 	color: var(--color-White-DarkMode-Text_LightMode-Elements);
 }
 
 #dark span{
-	transition: all 0.3s;
 	color: var(--color-White-DarkMode-Text_LightMode-Elements);
 }
 
-#dark .btn{
-	transition: all 0.3s;
+#dark .btn, .info-btn{
 	color: var(--color-White-DarkMode-Text_LightMode-Elements);
 	background-color:var(--color-DarkBlue-DarkModeElements);
 }
 
 #dark .input{
-	transition: all 0.3s;
 	color: var(--color-White-DarkMode-Text_LightMode-Elements);
 	background-color:var(--color-DarkBlue-DarkModeElements);
 }
 
 #dark .input::placeholder{
-	transition: all 0.3s;
 	color: snow;
 }
 
 #dark .select, .css-6hp17o-MuiList-root-MuiMenu-list{
-	transition: all 0.3s;
 	color: snow;
 	background-color:var(--color-DarkBlue-DarkModeElements);
 }
@@ -205,7 +196,7 @@ p{
 
 .dark-light{
 	display: flex;
-	align-items: center;
+	align-items: end;
 }
 
 
@@ -220,7 +211,7 @@ p{
 }
 
 .section{
-	margin: 1.2rem 1.5rem;
+	padding: 1.2rem 1.5rem;
 	display: grid;
 	gap: 40px;
 }
@@ -373,7 +364,7 @@ height: 200px;
 }
 
 .info-box{
-	margin: 2rem;
+	padding: 2rem;
 	display: grid;
 	gap: 30px;
 }
@@ -404,9 +395,7 @@ height: 200px;
     font-weight: 600;
 }
 
-/* .img-container{
-	margin-bottom:3rem;
-} */
+
 
 .info-img{
 	width:100%
@@ -483,7 +472,6 @@ span{
 	display: grid;
 align-items: center;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-/* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
 }
 
 
@@ -492,12 +480,29 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	grid-template-columns: repeat(auto-fit, minMax(min(80%, 80px), 3fr) );
 	display: grid;
 }
-/* 
-#light{
-	background-color: #fb5b53;
+
+
+/* #light .select, .css-6hp17o-MuiList-root-MuiMenu-list{
+	color: rgb(0, 0, 0);
+	background-color:transparent;
 } */
 
 
+.select .MuiList-root,
+ .MuiList-padding,
+  .MuiMenu-list,
+.css-6hp17o-MuiList-root-MuiMenu-list
+ .MuiButtonBase-root,
+ .MuiMenuItem-root,
+  .MuiMenuItem-gutters,
+   .MuiMenuItem-root,
+    .MuiMenuItem-gutters,
+	 .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
+		/* padding: 0; */
+		min-height: 25px;
+		font-size: 0.8rem;
+		font-weight: 300;
+	 }
 
 
 @media (min-width:1024px) {
