@@ -98,7 +98,7 @@ body {
 	transition: all 0.5s ease;
 }
 
-#dark ::-webkit-scrollbar {
+#dark ::-webkit-scrollbar, ::-webkit-scrollbar-thumb  {
 	background-color:var(--color-VeryDark-BlueDarkMode-Background);
 }
 
@@ -106,7 +106,13 @@ body {
 	color: snow;
 }
 
+#dark .select .MuiSvgIcon-root, .MuiSvgIcon-fontSizeMedium, .MuiSelect-icon, .MuiSelect-iconOutlined .MuiSelect-iconOpen, .css-bpeome-MuiSvgIcon-root-MuiSelect-icon{
+	color: snow;
+}
+
+
 #dark{
+	min-height: 100vh;
 	background-color:var(--color-VeryDark-BlueDarkMode-Background);
 	color: var(--color-White-DarkMode-Text_LightMode-Elements);
 	transition: all 0.5s ease;
@@ -129,7 +135,17 @@ body {
 	color: var(--color-White-DarkMode-Text_LightMode-Elements);
 }
 
-#dark .btn, .info-btn{
+#dark .btn{
+	color: var(--color-White-DarkMode-Text_LightMode-Elements);
+	background-color:var(--color-DarkBlue-DarkModeElements);
+}
+
+#dark  .info-btn{
+	color: var(--color-White-DarkMode-Text_LightMode-Elements);
+	background-color:var(--color-DarkBlue-DarkModeElements);
+}
+
+#dark  .badge{
 	color: var(--color-White-DarkMode-Text_LightMode-Elements);
 	background-color:var(--color-DarkBlue-DarkModeElements);
 }
@@ -152,6 +168,11 @@ body {
 	color: snow;
 }
 
+ .select, .css-6hp17o-MuiList-root-MuiMenu-list{
+	color:#2e2e27;
+	background-color:transparent;
+}
+
 
 h1{
 	color: black;
@@ -164,6 +185,10 @@ h2, .country-info-heading{
 	font-size:1.3rem;
 	font-weight: 700;
 	margin-bottom: 1.5rem;
+}
+
+.country-info-heading{
+	margin-top: 3rem;
 }
 
 h3{
@@ -270,7 +295,6 @@ p{
 	padding: 0  1.5rem;
     width: 50px;
     border: none;
-    /* background-color: rgb(255, 255, 255); */
 	background-color: transparent;
 }
 
@@ -332,23 +356,21 @@ outline: none;
 	text-overflow: clip;
 	overflow: hidden;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-	/* height: 400px; */
 	border-radius: 5px;
 	display: grid;
 	gap: 30px;
 }
 
-.img-container{
-height: 200px;
+.img-container {
+    overflow: hidden;
+    height: 200px;
 }
 
 .flags {
-    /* height: 180px; */
     width: 100%;
 }
 
 .info{
-	/* letter-spacing: 1px; */
 	padding: 0 1rem 4rem;
 }
 
@@ -371,6 +393,11 @@ height: 200px;
 .btn-container{
 	width:110px;
 	margin-bottom: 4rem;
+}
+
+#light .info-btn{
+	color: #2e2e27;
+
 }
 
 .info-btn  {
@@ -449,8 +476,7 @@ span{
 }
 
 .info-tag{
-	display: grid;
-	gap: 20px;
+margin-bottom: 1rem;
 }
 
 .info-tag > p{
@@ -481,56 +507,108 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 
-/* #light .select, .css-6hp17o-MuiList-root-MuiMenu-list{
-	color: rgb(0, 0, 0);
-	background-color:transparent;
-} */
-
 
 .select .MuiList-root,
- .MuiList-padding,
-  .MuiMenu-list,
+.MuiList-padding,
+.MuiMenu-list,
 .css-6hp17o-MuiList-root-MuiMenu-list
- .MuiButtonBase-root,
- .MuiMenuItem-root,
-  .MuiMenuItem-gutters,
-   .MuiMenuItem-root,
-    .MuiMenuItem-gutters,
-	 .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
-		/* padding: 0; */
+.MuiButtonBase-root,
+.MuiMenuItem-root,
+.MuiMenuItem-gutters,
+.MuiMenuItem-root,
+.MuiMenuItem-gutters,
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
 		min-height: 25px;
 		font-size: 0.8rem;
 		font-weight: 300;
-	 }
+}
+
 
 
 @media (min-width:1024px) {
+
+	.cards-section {
+		justify-items: left;
+	}
+
 	.form{
 		width:500px
 	}
 
 .flex{
+display: flex;
+justify-content: space-between;
+}
+
+.info-flex{
 	display: flex;
-	justify-content: space-between;
+	gap: 3rem;
 }
 
 .info-img {
-    height: 250px;
+    height: 310px;
     width: 100%;
 }
 
 .info-box-flex {
-    justify-content: space-between;
-    align-items: flex-end;
-    display: flex;
+	min-height: 81vh;
+
 }
 
-.country-info-box-desktop {
-	display: flex;
+.tags-flex{
+	display: grid;
+	gap: 20px;
+    margin-top: 2rem;
 }
 
-.info-tag {
-margin-top: 3rem;
+.country-info-heading{
+	margin-top: 0;
+	margin-bottom: 2rem;
 }
+
+.country-info-box {
+display: flex;
+justify-content: space-between;
+margin: 0;
+}
+
+.country-info-list{
+	margin: 0;
+    display: grid;
+    gap: 15px;
+}
+
+.country-info-list-two{
+	margin: 0;
+	display: block;
+} 
+
+.country-info-list-two li{
+	padding-bottom: 0.8rem;
+}
+
+.info-tag{
+	margin: 0;
+}
+
+.tags{
+	margin-left: 1rem;
+	/* display: flex; */
+}
+
+.dark-light:hover, .info-btn:hover{
+	cursor: pointer;
+}
+
+}
+
+@media (min-width:1366px) {
+	.info-flex{
+		gap: 5rem;
+		}
+
+		.tags-flex{
+			margin-top: 5rem;
+		}
 
 }

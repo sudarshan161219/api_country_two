@@ -16,7 +16,7 @@ var commas = num.toLocaleString("en-US");
          </div>
 
          <div className='info' >
-        <h2>{name.official}</h2>
+        <h2>{name.common}</h2>
 <div className="grid-info" >
         <h3>Population: <span>{commas}</span></h3>
         <h3>Region: <span>{region}</span></h3>

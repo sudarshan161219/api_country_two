@@ -1,5 +1,6 @@
 import React, {createContext,useRef, useMemo, useEffect, useState } from 'react'
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
+// import { TransitionGroup,CSSTransition} from "react-transition-group";
 import Loading from './Loading';
 import Header from './Header';
 import Main from './Main';
@@ -45,7 +46,7 @@ const filteredItems =  useMemo(() => {
   return  api.filter(item =>{
       return(
         item.region.toLowerCase().includes(change.toLowerCase())  && 
-         item.name.official.toLowerCase().includes(input.toLowerCase())
+         item.name.common.toLowerCase().includes(input.toLowerCase())
       )
       })
   })
@@ -63,6 +64,7 @@ const toggleTheme = () => {
 setTheme((theme === 'light' ? 'dark' : 'light'))
 }
 
+// let location = useLocation();
 
   return(
 

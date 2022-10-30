@@ -48,16 +48,21 @@ const fetchInfo = async () => {
 <button className='info-btn'> <BsArrowLeft className='btn-arrow' /> back </button>
 </Link>
 </div>
+</div>
 
-<div className='ino-img-container'>
-<img className="info-img" alt={item.name.official} src={item.flags.png}  />
-</div>
-</div>
 
 <div className='country-info-box'>
+<div className='info-img-container'>
+<img className="info-img" alt={item.name.official} src={item.flags.png}  />
+</div>
+
+
+
 <div className='country-info-box-desktop' >
+<h1 className='country-info-heading'>{item.name.official}</h1>
+<div className='info-flex' >
     <ul className='country-info-list'>
-    <h1 className='country-info-heading'>{item.name.official}</h1>
+    
 
       <li className='country-info-list-items'>
         Native Name: <span>{Object.values(item.name.nativeName)[0]?.common}</span>
@@ -80,7 +85,9 @@ const fetchInfo = async () => {
       </li>
 
     </ul>
+    {/* </div> */}
 
+{/* <div> */}
     <ul className='country-info-list-two'>
       
       <li className='country-info-list-items'>
@@ -97,12 +104,14 @@ const fetchInfo = async () => {
       </li>
 
     </ul>
+</div>
 
-    </div>
+
+    <div className='tags-flex' >
 
 <div className='info-tag'>
   <p>Border Countries:</p>
-
+</div>
   <div className='tags'>{
     
           item.borders ? item.borders.map((item, index) => (
@@ -114,8 +123,11 @@ const fetchInfo = async () => {
     
     }</div>
 
+</div>
+
 
 </div>
+
 
 </div>
 
