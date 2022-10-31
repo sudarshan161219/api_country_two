@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom';
-import { BsArrowLeft } from 'react-icons/bs'
+// import { BsArrowLeft } from 'react-icons/bs'
 import {motion} from 'framer-motion'
 
 const Info = () => {
