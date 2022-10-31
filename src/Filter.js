@@ -4,12 +4,6 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import './App.css';
-// import { height } from '@mui/system';
-
-
-
-
-
 
 const Filter = (props) => {
 
@@ -30,13 +24,8 @@ const labelStyle = {
   border:'none'
 }
 
-
-
-
     return (
-      <>
 
-      
       <FormControl className='css-1e7cuzv-MuiFormControl-root' >
 
         <InputLabel className='label' style={labelStyle}  id="demo-simple-select-autowidth-label">Filter by Region</InputLabel>
@@ -51,7 +40,6 @@ const labelStyle = {
           className='select'
         >
 
-
           <MenuItem value='Africa'>Africa</MenuItem>
           <MenuItem value='Americas'>Americas</MenuItem>
           <MenuItem value='Asia'>Asia</MenuItem>
@@ -60,8 +48,7 @@ const labelStyle = {
 
         </Select>
       </FormControl>
-   
-</>
+
     );
   };
   

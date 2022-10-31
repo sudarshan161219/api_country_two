@@ -16,11 +16,11 @@ props.input.current.value =""
 
     return (
 <>
-        <div className='main-div'>
+        <section className='main-div'>
         <form className='form' onSubmit={handleSubmit}>
-        <button className='btn' type='submit'>
+        <div className='btn'>
         <AiOutlineSearch className='search-icon' />
-        </button>
+        </div>
         <input 
         placeholder='Search for a country...'
         type='search' 
@@ -29,9 +29,8 @@ props.input.current.value =""
         ref={props.inputR}
         onChange={(e) => props.country(e.target.value)}
         />
-
       </form>
-      </div>
+      </section>
 </>
     );
   };

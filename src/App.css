@@ -57,7 +57,7 @@ table {
 
   ::-webkit-scrollbar {
 	background-color:var(--color-VeryDark-BlueDarkMode-Background);
-	width: 10px;
+	width: 3px;
   }
   
   /* Track */
@@ -298,11 +298,16 @@ p{
 	letter-spacing: 1.1px;
 }
 
+
+
 .btn {
 	padding: 0  1.5rem;
     width: 50px;
     border: none;
 	background-color: transparent;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 
 .input, .btn {
