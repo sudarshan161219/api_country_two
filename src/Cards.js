@@ -1,22 +1,34 @@
 import React from 'react'
 import Card from './Card'
-
-import {motion} from 'framer-motion' 
-// import {AnimatePresence ,motion} from 'framer-motion' 
+import {AnimatePresence ,motion} from 'framer-motion' 
 
 
 const Cards = ({Api}) => {
 
     return (
       <>
-{/* <AnimatePresence> */}
+<AnimatePresence>
 
 <motion.section 
 className='cards-section'
-initial={{width:0}}
-animate={{width:'100%'}}
-exit={{x: window.innerWidth}}
-transition={{ duration: 0.3 }}
+
+initial={{
+  opacity: 0,
+  translateX: -500,
+}}
+animate={{
+  opacity: 1,
+  translateX: 0,
+}}
+transition={{
+  duration: 0.5,
+  translateX: -500,
+}}
+exit={{
+  opacity: 0,
+  translateX: -500,
+}}
+
  >{Api.map((apii, index) => {
     return (
 <Card key={index} {...apii} /> 
@@ -24,7 +36,7 @@ transition={{ duration: 0.3 }}
 
   })}</motion.section>
 
-{/* </AnimatePresence> */}
+</AnimatePresence>
 
 </>
     );

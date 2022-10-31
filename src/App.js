@@ -1,7 +1,6 @@
 import React, {createContext, useEffect, useState } from 'react'
 import Loading from './Loading';
 import Header from './Header';
-
 import './App.css';
 import AnimatedRoutes from './AnimatedRoutes';
 
@@ -11,7 +10,6 @@ function App() {
 
 const [loading, setLoading] = useState(true)
 const [api, setApi] = useState([])
-
 const [theme, setTheme] = useState('dark')
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -46,6 +44,10 @@ const toggleTheme = () => {
 setTheme((theme === 'light' ? 'dark' : 'light'))
 }
 
+// const changeTheme = () => {
+//   document.body.classList.toggle("dark");
+//   setTheme(!theme);
+// };
 
 
   return(
@@ -54,7 +56,7 @@ setTheme((theme === 'light' ? 'dark' : 'light'))
 
     <div id={theme}>
         <Header toggle={toggleTheme} theme={theme} />
-<AnimatedRoutes Api={api} />
+        <AnimatedRoutes Api={api} />
     </div>
 
     </ThemeContext.Provider>

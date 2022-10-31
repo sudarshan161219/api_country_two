@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { BsArrowLeft } from 'react-icons/bs'
-import {motion} from 'framer-motion' 
-// import {AnimatePresence ,motion} from 'framer-motion' 
+import {AnimatePresence ,motion} from 'framer-motion' 
 
 const Info = () => {
 
@@ -13,7 +12,7 @@ let { id } = useParams();
       useEffect (() =>{
 const fetchInfo = async () => { 
       try{
-      const response = await fetch(`https://restcountries.com/v3.1/name/${id}`)
+      const response = await fetch(`https://restcountries.com/v3.1/name/${id}?fullText=true`)
       const info = await response.json()
       setInfo(info)
       } catch(error){
@@ -31,11 +30,10 @@ const fetchInfo = async () => {
 
 
 
-
   return (
   <>
 
-{/* <AnimatePresence> */}
+<AnimatePresence>
 
     <motion.article 
     className='info-box'
@@ -46,10 +44,10 @@ const fetchInfo = async () => {
     >
 
 
-{info.map((item, index) => {
+{info.map((items, index) => {
   return(
     // <>  
-    <div  className='info-box-flex'  key={item}>
+    <div  className='info-box-flex'  key={index}>
 
 <div className='btn--img-container' >
 <div className='btn-container' >
@@ -83,37 +81,37 @@ const fetchInfo = async () => {
   }}
 
 className="info-img" 
-alt={item.name.official} 
-src={item.flags.png}  
+alt={items.name.official} 
+src={items.flags.png}  
 />
 </div>
 
 
 
 <div className='country-info-box-desktop' >
-<h1 className='country-info-heading'>{item.name.official}</h1>
+<h1 className='country-info-heading'>{items.name.common}</h1>
 <div className='info-flex' >
     <ul className='country-info-list'>
     
 
       <li className='country-info-list-items'>
-        Native Name: <span>{Object.values(item.name.nativeName)[0]?.common}</span>
+        Native Name: <span>{Object.values(items.name.nativeName)[0]?.common}</span>
       </li>
 
       <li className='country-info-list-items'>
-        Population: <span>{item.population.toLocaleString("en-US")}</span>
+        Population: <span>{items.population.toLocaleString("en-US")}</span>
       </li>
 
       <li className='country-info-list-items'>
-        Region: <span>{item.region}</span> 
+        Region: <span>{items.region}</span> 
       </li>
 
       <li className='country-info-list-items'>
-        Sub Region: <span>{item.subregion}</span>
+        Sub Region: <span>{items.subregion}</span>
       </li>
 
       <li className='country-info-list-items'>
-        Capital: <span>{item.capital}</span>
+        Capital: <span>{items.capital}</span>
       </li>
 
     </ul>
@@ -121,15 +119,15 @@ src={item.flags.png}
     <ul className='country-info-list-two'>
       
       <li className='country-info-list-items'>
-        Top Level Domain: <span>{item.tld}</span>
+        Top Level Domain: <span>{items.tld}</span>
       </li>
 
       <li className='country-info-list-items'>
-        Currencies: <span>{prepareCurrencies(item.currencies)}</span>
+        Currencies: <span>{prepareCurrencies(items.currencies)}</span>
       </li>
 
       <li className='country-info-list-items'>
-        Languages: <span>{Object.values(item.languages).toLocaleString('en-US').replaceAll(',', ', ') 
+        Languages: <span>{Object.values(items.languages).toLocaleString('en-US').replaceAll(',', ', ') 
         }</span> 
       </li>
 
@@ -146,7 +144,7 @@ src={item.flags.png}
 
   <div className='tags'>{
     
-          item.borders ? item.borders.map((item, index) => (
+          items.borders ? items.borders.map((item, index) => (
 <motion.div 
 
 initial={{
@@ -165,10 +163,13 @@ delay: index * 0.1,
  }}
  
 className="badge" 
-key={index}>
+key={index}
+>
 {item}
+
+
 </motion.div>
-            
+           
   )) : '😎'
     
     }</div>
@@ -190,7 +191,7 @@ key={index}>
 
 })}
     </motion.article>
-        {/* </AnimatePresence> */}
+        </AnimatePresence>
     </>
 
   );
