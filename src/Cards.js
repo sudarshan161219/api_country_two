@@ -1,13 +1,15 @@
 import React from 'react'
 import Card from './Card'
-import {AnimatePresence ,motion} from 'framer-motion'
+
+import {motion} from 'framer-motion' 
+// import {AnimatePresence ,motion} from 'framer-motion' 
+
+
 const Cards = ({Api}) => {
-
-
 
     return (
       <>
-<AnimatePresence>
+{/* <AnimatePresence> */}
 
 <motion.section 
 className='cards-section'
@@ -22,7 +24,7 @@ transition={{ duration: 0.3 }}
 
   })}</motion.section>
 
-</AnimatePresence>
+{/* </AnimatePresence> */}
 
 </>
     );

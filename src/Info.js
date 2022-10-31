@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { BsArrowLeft } from 'react-icons/bs'
-import {AnimatePresence ,motion} from 'framer-motion'
+import {motion} from 'framer-motion' 
+// import {AnimatePresence ,motion} from 'framer-motion' 
 
 const Info = () => {
 
@@ -34,7 +35,7 @@ const fetchInfo = async () => {
   return (
   <>
 
-<AnimatePresence>
+{/* <AnimatePresence> */}
 
     <motion.article 
     className='info-box'
@@ -189,7 +190,7 @@ key={index}>
 
 })}
     </motion.article>
-        </AnimatePresence>
+        {/* </AnimatePresence> */}
     </>
 
   );
