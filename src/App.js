@@ -44,25 +44,16 @@ const toggleTheme = () => {
 setTheme((theme === 'light' ? 'dark' : 'light'))
 }
 
-// const changeTheme = () => {
-//   document.body.classList.toggle("dark");
-//   setTheme(!theme);
-// };
-
-
   return(
-
     <ThemeContext.Provider value={{theme, toggleTheme}} >
 
-    <div id={theme}>
+    <section id={theme}>
         <Header toggle={toggleTheme} theme={theme} />
         <AnimatedRoutes Api={api} />
-    </div>
+    </section>
 
     </ThemeContext.Provider>
-
   )
-
 }
 
 export default App;
