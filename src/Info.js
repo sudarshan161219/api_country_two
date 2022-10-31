@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom';
-// import { BsArrowLeft } from 'react-icons/bs'
-import {motion} from 'framer-motion'
+import { BsArrowLeft } from 'react-icons/bs'
+import {AnimatePresence ,motion} from 'framer-motion'
 
 const Info = () => {
 
@@ -34,14 +34,14 @@ const fetchInfo = async () => {
   return (
   <>
 
-
+<AnimatePresence>
 
     <motion.article 
     className='info-box'
     initial={{width:0}}
     animate={{width:'100%'}}
     exit={{x: window.innerWidth}}
-    transition={{ duration: 0.5 }}
+    transition={{ duration: 0.3 }}
     >
 
 
@@ -52,17 +52,39 @@ const fetchInfo = async () => {
 
 <div className='btn--img-container' >
 <div className='btn-container' >
-<Link to='/' style={{ textDecoration: 'none', width:'200px' }} > 
-back
-{/* <button className='info-btn'> <BsArrowLeft className='btn-arrow' /> back </button> */}
+<Link to='/' style={{ textDecoration: 'none', width:'200px' }}> 
+<button className='info-btn'> <BsArrowLeft className='btn-arrow' /> back </button>
 </Link>
+
 </div>
 </div>
 
 
 <div className='country-info-box'>
 <div className='info-img-container'>
-<img className="info-img" alt={item.name.official} src={item.flags.png}  />
+<img 
+
+  initial={{
+    opacity: 0,
+    translateX: -500,
+  }}
+  animate={{
+    opacity: 1,
+    translateX: 0,
+  }}
+  transition={{
+    duration: 0.5,
+    translateX: -500,
+  }}
+  exit={{
+    opacity: 0,
+    translateX: -500,
+  }}
+
+className="info-img" 
+alt={item.name.official} 
+src={item.flags.png}  
+/>
 </div>
 
 
@@ -94,9 +116,7 @@ back
       </li>
 
     </ul>
-    {/* </div> */}
 
-{/* <div> */}
     <ul className='country-info-list-two'>
       
       <li className='country-info-list-items'>
@@ -121,16 +141,37 @@ back
 <div className='info-tag'>
   <p>Border Countries:</p>
 </div>
+
+
   <div className='tags'>{
     
           item.borders ? item.borders.map((item, index) => (
-          <div className="badge" key={index}>
-            {item}
-            </div>
+<motion.div 
 
+initial={{
+ opacity: 0,
+translateY: -50,
+}}
+
+ animate={{
+opacity: 1,
+translateY: 0,
+ }}
+
+transition={{
+duration: 0.2,
+delay: index * 0.1,
+ }}
+ 
+className="badge" 
+key={index}>
+{item}
+</motion.div>
+            
   )) : '😎'
     
     }</div>
+
 
 </div>
 
@@ -148,7 +189,9 @@ back
 
 })}
     </motion.article>
+        </AnimatePresence>
     </>
+
   );
 };
 

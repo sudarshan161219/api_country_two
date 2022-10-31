@@ -33,18 +33,6 @@ fetchInfo()
 }, [])
 
 
-
-
-// // eslint-disable-next-line react-hooks/exhaustive-deps
-// const filteredItems =  useMemo(() => {
-//   return  api.filter(item =>{
-//       return(
-//         item.region.toLowerCase().includes(change.toLowerCase())  && 
-//          item.name.common.toLowerCase().includes(input.toLowerCase())
-//       )
-//       })
-//   })
-
 if(loading){
   return(
     <main>
