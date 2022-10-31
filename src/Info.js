@@ -53,7 +53,8 @@ const fetchInfo = async () => {
 <div className='btn--img-container' >
 <div className='btn-container' >
 <Link to='/' style={{ textDecoration: 'none', width:'200px' }} > 
-<button className='info-btn'> <BsArrowLeft className='btn-arrow' /> back </button>
+back
+{/* <button className='info-btn'> <BsArrowLeft className='btn-arrow' /> back </button> */}
 </Link>
 </div>
 </div>
