@@ -1,7 +1,6 @@
 import React from 'react'
 import Card from './Card'
-// import Info from './Info'
-// import { Link } from 'react-router-dom';
+import {motion} from 'framer-motion'
 
 const Cards = ({Api}) => {
 
@@ -9,12 +8,18 @@ const Cards = ({Api}) => {
 
     return (
       <>
-<section className='cards-section' >{Api.map((apii, index) => {
+<motion.section 
+className='cards-section'
+initial={{width:0}}
+animate={{width:'100%'}}
+exit={{x: window.innerWidth}}
+transition={{ duration: 1 }}
+ >{Api.map((apii, index) => {
     return (
 <Card key={index} {...apii} /> 
     )
 
-  })}</section>
+  })}</motion.section>
 
 
 

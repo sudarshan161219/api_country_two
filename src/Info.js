@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { BsArrowLeft } from 'react-icons/bs'
-
+import {motion} from 'framer-motion'
 
 const Info = () => {
 
@@ -36,7 +36,15 @@ const fetchInfo = async () => {
 
 
 
-    <article className='info-box' >
+    <motion.article 
+    className='info-box'
+    initial={{width:0}}
+    animate={{width:'100%'}}
+    exit={{x: window.innerWidth}}
+    transition={{ duration: 1 }}
+    >
+
+
 {info.map((item, index) => {
   return(
     // <>  
@@ -44,7 +52,7 @@ const fetchInfo = async () => {
 
 <div className='btn--img-container' >
 <div className='btn-container' >
-<Link to={'/'} style={{ textDecoration: 'none', width:'200px' }} > 
+<Link to='/' style={{ textDecoration: 'none', width:'200px' }} > 
 <button className='info-btn'> <BsArrowLeft className='btn-arrow' /> back </button>
 </Link>
 </div>
@@ -138,7 +146,7 @@ const fetchInfo = async () => {
   )
 
 })}
-    </article>
+    </motion.article>
     </>
   );
 };
