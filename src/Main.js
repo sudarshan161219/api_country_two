@@ -6,7 +6,6 @@ const Main = (props) => {
 
 
     return (
-
         <article className='main-div'>
         <section className='form'>
         <AiOutlineSearch className='search-icon' />
@@ -17,10 +16,10 @@ const Main = (props) => {
         value={props.input}
         ref={props.inputR}
         onChange={(e) => props.country(e.target.value)}
-        ></input>
+        >  
+        </input>
       </section>
       </article>
-
     );
   };
   

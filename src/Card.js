@@ -6,8 +6,6 @@ var num = population;
 var commas = num.toLocaleString("en-US");
 
   return (
-  <>
-
 <article className="cards">
       <Link to={`/info/${name.official.toLowerCase().replace(/\s/g, "%20")}`} style={{ textDecoration: 'none' }}>  
       <div className='card-container' >
@@ -23,13 +21,9 @@ var commas = num.toLocaleString("en-US");
         <h3>Capital: <span>{capital}</span></h3>
 </div>
         </div>
-
         </div>
         </Link>
     </article>
-
-
-    </>
   );
 };
 
