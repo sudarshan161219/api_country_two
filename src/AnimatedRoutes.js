@@ -31,7 +31,7 @@ const filteredItems =  useMemo(() => {
 <AnimatePresence>
     <Routes location={location} key={location.pathname} >
         <Route path='/' element={
-    <section className='section'>
+    <div className='section'>
       <div className='flex' >
                   <Main
                     className='flex-form'
@@ -47,7 +47,7 @@ const filteredItems =  useMemo(() => {
                     />
       </div>                    
            <Cards Api={filteredItems} />     
-     </section>
+     </div>
 
         } />  
       
