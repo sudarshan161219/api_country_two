@@ -6,8 +6,8 @@ const Main = (props) => {
 
 
     return (
-        <article className='main-div'>
-        <section className='form'>
+        <div className='main-div'>
+        <div className='form'>
         <AiOutlineSearch className='search-icon' />
         <input 
         placeholder='Search for a country...'
@@ -18,8 +18,8 @@ const Main = (props) => {
         onChange={(e) => props.country(e.target.value)}
         >  
         </input>
-      </section>
-      </article>
+      </div>
+      </div>
     );
   };
   
