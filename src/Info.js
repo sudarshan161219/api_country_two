@@ -60,7 +60,7 @@ const fetchInfo = async () => {
 
 
 <div className='country-info-box'>
-<div className='info-img-container'>
+{/* <div className='info-img-container'> */}
 <img 
 
   initial={{
@@ -84,7 +84,7 @@ className="info-img"
 alt={items.name.official} 
 src={items.flags.png}  
 />
-</div>
+{/* </div> */}
 
 
 

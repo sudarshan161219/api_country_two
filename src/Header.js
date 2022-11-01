@@ -4,7 +4,8 @@ import {HiOutlineMoon, HiOutlineSun} from 'react-icons/hi'
 const Header = (props) => {
 
     return (
-      // <header>
+<main>
+      <header>
       <nav>        
       <Link to="/">
           <h1>Where in the world?</h1>
@@ -14,7 +15,8 @@ const Header = (props) => {
       <p>{props.theme === 'dark' ? 'Light Mode': 'Dark Mode'}</p>  
       </div>
       </nav>
-      // </header>
+       </header>
+</main>
     );
   };
   
