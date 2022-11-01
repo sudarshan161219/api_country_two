@@ -4,7 +4,7 @@ import {HiOutlineMoon, HiOutlineSun} from 'react-icons/hi'
 const Header = (props) => {
 
     return (
-<main>
+
       <header>
       <nav>        
       <Link to="/">
@@ -16,7 +16,7 @@ const Header = (props) => {
       </div>
       </nav>
        </header>
-</main>
+
     );
   };
   

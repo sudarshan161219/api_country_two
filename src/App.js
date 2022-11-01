@@ -47,10 +47,10 @@ setTheme((theme === 'light' ? 'dark' : 'light'))
   return(
     <ThemeContext.Provider value={{theme, toggleTheme}} >
 
-    <section id={theme}>
+    <main id={theme}>
         <Header toggle={toggleTheme} theme={theme} />
         <AnimatedRoutes Api={api} />
-    </section>
+    </main>
 
     </ThemeContext.Provider>
   )
