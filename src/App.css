@@ -135,7 +135,7 @@ body {
 	color: var(--color-White-DarkMode-Text_LightMode-Elements);
 }
 
-#dark .btn{
+#dark .search-icon{
 	color: var(--color-White-DarkMode-Text_LightMode-Elements);
 	background-color:var(--color-DarkBlue-DarkModeElements);
 }
@@ -227,9 +227,13 @@ p{
 }
 
 
-.search-icon{
-		font-size: 1.4rem;
-	color:#d3d1c0;
+.search-icon {
+    font-size: 1.4rem;
+    color: #929187;
+    position:absolute;
+	left: 35px;
+    display: grid;
+    align-self: center;
 }
 
 .icon{
@@ -284,7 +288,7 @@ p{
 	letter-spacing: 1.1px;
 	width: 100%;
 	width: 100%;
-	padding: 0.9rem 24px 0.9rem 0.9rem;
+	padding: 0.9rem 0.9rem 0.9rem 3rem;
 	background-color: transparent;
 	transition: transform 250ms ease-in-out;
 	font-size: 16px;
