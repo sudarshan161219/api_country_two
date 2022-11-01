@@ -17,7 +17,7 @@ const Main = (props) => {
         value={props.input}
         ref={props.inputR}
         onChange={(e) => props.country(e.target.value)}
-        />
+        ></input>
       </section>
       </article>
 
