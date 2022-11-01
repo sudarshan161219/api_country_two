@@ -10,7 +10,7 @@ var commas = num.toLocaleString("en-US");
       <Link to={`/info/${name.official.toLowerCase().replace(/\s/g, "%20")}`} style={{ textDecoration: 'none' }}>  
       <div className='card-container' >
          <div className='img-container'>
-        <img className='flags' src={flags.png} alt="flags" /> 
+        <img className='flags' src={flags.png} alt={name.official} /> 
          </div>
 
          <div className='info' >
