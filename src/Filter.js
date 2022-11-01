@@ -25,7 +25,7 @@ const labelStyle = {
 }
 
     return (
-<main>
+<section>
       <FormControl className='css-1e7cuzv-MuiFormControl-root' >
         <InputLabel className='label' style={labelStyle}  id="demo-simple-select-autowidth-label">Filter by Region</InputLabel>
 
@@ -47,7 +47,7 @@ const labelStyle = {
 
         </Select>
       </FormControl>
-</main>
+</section>
     );
   };
   
