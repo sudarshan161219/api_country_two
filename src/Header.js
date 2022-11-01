@@ -6,15 +6,13 @@ const Header = (props) => {
  
 
     return (
-
-      <header className='header-nav'>        
+      <nav className='header-nav'>        
       <h1>Where in the world?</h1>
-      <nav onClick={props.toggle} className='dark-light'>
+      <div onClick={props.toggle} className='dark-light'>
      {props.theme === 'dark' ? <HiOutlineSun  className='icon' /> : <HiOutlineMoon  className='icon' /> }   
       <p>{props.theme === 'dark' ? 'Light Mode': 'Dark Mode'}</p>  
+      </div>
       </nav>
-      </header>
-
     );
   };
   

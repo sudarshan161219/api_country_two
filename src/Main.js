@@ -15,8 +15,9 @@ props.input.current.value =""
     }
 
     return (
-<>
+
         <section className='main-div'>
+        <h1 className='section-heading'>hello</h1>
         <form className='form' onSubmit={handleSubmit}>
         <div className='btn'>
         <AiOutlineSearch className='search-icon' />
@@ -31,7 +32,7 @@ props.input.current.value =""
         />
       </form>
       </section>
-</>
+
     );
   };
   
