@@ -6,7 +6,6 @@ import {AnimatePresence ,motion} from 'framer-motion'
 const Cards = ({Api}) => {
 
     return (
-      <>
 <AnimatePresence>
 
 <motion.section 
@@ -38,7 +37,6 @@ exit={{
 
 </AnimatePresence>
 
-</>
     );
 
 
