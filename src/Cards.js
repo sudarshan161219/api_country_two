@@ -8,7 +8,7 @@ const Cards = ({Api}) => {
     return (
 <AnimatePresence>
 
-<motion.section 
+<motion.div 
 className='cards-section'
 
 initial={{
@@ -33,7 +33,7 @@ exit={{
 <Card key={index} {...apii} /> 
     )
 
-  })}</motion.section>
+  })}</motion.div>
 
 </AnimatePresence>
 
